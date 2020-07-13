@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<title>Feedback</title>
+	<style>
+		label {
+			float: left;
+			width: 150px;
+		}
+
+		#container {
+			width: 700px;
+			margin: auto;
+			background-color: beige;
+		}
+
+		main {
+			padding: 50px;
+		}
+
+		.invalid {
+			border-color: red;
+		}
+
+		#errTitle,
+		#errSource,
+		#errDrink,
+		#errComment,
+		#errText1,
+		#test {
+			color: red;
+			float: right;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="container">
+
+		<main>
+			<h2>Feeback</h2>
+			<h3>Love something? Hate something? Let us know!</h3>
+			Note : Fields marked with an asterisk(*) are mandatory
+			<br><br>
+
+			<form name="myForm" id="myForm" method="post" action="feedbackComplete.html"
+				onsubmit="return validateForm(myForm)">
+
+				<label>Title*:</label>
+				<input type="radio" name="title" id="miss" value="miss" required="required" />Miss
+				<input type="radio" name="title" id="mr" value="mr" required="required" />Mr.
+				<input type="radio" name="title" id="mrs" value="mrs" required="required" />Mrs.
+				<br><br>
+
+				<label for="firstName">First Name*:</label>
+				<input type="text" name="firstName" id="firstName" required="required" placeholder="First Name"
+					onblur="validateInputs(this, 1, 'FName')" />
+				<br><br>
+				<div id="errorMsgFName" style="display:none;color:red">
+					Invalid input for your first name. Only text values permitted.
+					<br /><br />
+				</div>
+
+				<label for="lastName">Last Name*:</label>
+				<input type="text" name="lastName" id="lastName" required="required" placeholder="Last Name"
+					onblur="validateInputs(this, 1, 'LName')" />
+				<br><br>
+				<div id="errorMsgLName" style="display:none;color:red">
+					Invalid input for your last name. Only text values permitted.
+					<br /><br />
+				</div>
+
+				<label for="emailId">Email Id*:</label>
+				<input type="text" name="emailId" id="emailId" required="required" placeholder="yourname@domain.com"
+					onblur="validateInputs(this, 2)" />
+				<br><br>
+				<div id="errorMsgEmailId" style="display:none;color:red">
+					Invalid input for your email id. Please enter email id in proper format.
+					<br /><br />
+				</div>
+
+				<label for="phoneNumber">Phone Number:</label>
+				<input type="text" name="phoneNumber" id="phoneNumber" placeholder="xxx-xxx-xxxx"
+					onblur="validateInputs(this, 3)" />
+				<br><br>
+				<div id="errorMsgPhone" style="display:none;color:red">
+					Invalid input for your phone number. Only numerical values permitted and in the requested format
+					xxx-xxx-xxxx.
+					<br /><br />
+				</div>
+
+				<label for="zipcode">ZipCode*:</label>
+				<input type="text" name="zipcode" id="zipcode" required="required" placeholder="xxxxx/xxxxx-xxxx"
+					onblur="validateInputs(this, 4)" />
+				<br><br>
+				<div id="errorMsgZipcode" style="display:none;color:red">
+					Invalid input for zipcode. Please enter zipcode in proper format.
+					<br /><br />
+				</div>
+
+				<label for="source">How did you hear*:</label>
+				<input type='checkbox' name="source" value="facebook" /> Facebook
+				<input type='checkbox' name="source" value="google" /> Google
+				<input type='checkbox' name="source" value="yelp" /> Yelp
+				<div id="errSource"></div>
+				<br><br>
+
+				<label for="comments">Comments*:</label>
+				<textarea name="text" id="comments" placeholder="Your comments" rows="5" cols="25"></textarea>
+				<div id="errComment"></div>
+				<br><br>
+
+				<label for="drinks">Drinks*:</label>
+				<select name="drink" id="drink" onchange="selectFunction(this)">
+					<option value="">Select your drink</option>
+					<option value="latte">Latte</option>
+					<option value="mocha">Mocha</option>
+					<option value="espresso">Espresso</option>
+					<option value="americano">Americano</option>
+					<option value="cappuccino">Cappuccino</option>
+				</select>
+				<div id="errDrink"></div>
+
+				<div id=latte style="display: none; margin-left: 150px; margin-bottom: -25px; clear: both">
+					<input type="checkbox" name="checkDrink" value="Large Latte (3.00$)" onclick="onCheck(this)">
+					Large Latte (3.00$)
+				</div>
+
+				<div id=mocha style="display: none; margin-left: 150px; margin-bottom: -25px">
+					<input type="checkbox" name="checkDrink" value="Large Mocha (4.50$)" onclick="onCheck(this)">
+					Large Mocha (4.50$)
+				</div>
+
+				<div id=espresso style="display: none; margin-left: 150px; margin-bottom: -25px">
+					<input type="checkbox" name="checkDrink" value="Large Espresso (2.50$)" onclick="onCheck(this)">
+					Large Espresso (2.50$)
+				</div>
+
+				<div id=americano style="display: none; margin-left: 150px; margin-bottom: -25px">
+					<input type="checkbox" name="checkDrink" value="Large Americano (3.50$)" onclick="onCheck(this)">
+					Large Americano (3.50$)
+				</div>
+
+				<div id=cappuccino style="display: none; margin-left: 150px; margin-bottom: -25px">
+					<input type="checkbox" name="checkDrink" value="Large Cappuccino (4.00$)" onclick="onCheck(this)">
+					Large Cappuccino (4.00$)
+				</div><br><br>
+
+				<div id="text1" style="display: none; margin-left: 150px">
+					<input type="text" id="txtInput1">
+					<div id="errText1"></div>
+				</div>
+
+				<div id="test"></div>
+				<br><br>
+
+				<input type="Submit">
+				<input type="Reset">
+				<br><br>
+			</form>
+		</main>
+	</div>
+	<br><br>
+	<div id="myTable" align="center">
+	</div><br>
+	<div id="back" style="display: none" align="center"><a href="Form.html">Go Back</a></div>
+
+	<script>
+		function validateInputs(object, type, nameType) {
+			var regExName = /^[a-zA-Z]+$/
+			var regExEmail = /([\w\.]+)@([\w]+)\.(\w+)/;
+			var regExPhone = /\d{3}-?\d{3}-\d{4}$/;
+			var regExZipcode = /^\d{5}([-\s]\d{4})?$/;
+
+			var name = 'errorMsg' + nameType;
+
+			switch (type) {
+				case 1: if (!object.value.trim().match(regExName)) {
+					object.style.border = "2px solid red";
+					document.getElementById(name).style.display = "block";
+					object.value = "";
+				} else {
+					object.style.border = "";
+					document.getElementById(name).style.display = "none";
+				}
+					break;
+				case 2: if (!object.value.match(regExEmail)) {
+					object.style.border = "2px solid red";
+					document.getElementById("errorMsgEmailId").style.display = "block";
+					object.value = "";
+				}
+				else {
+					object.style.border = "";
+					document.getElementById("errorMsgEmailId").style.display = "none";
+				}
+					break;
+				case 3: if (!object.value.match(regExPhone)) {
+					object.style.border = "2px solid red";
+					document.getElementById("errorMsgPhone").style.display = "block";
+					object.value = "";
+				}
+				else {
+					object.style.border = "";
+					document.getElementById("errorMsgPhone").style.display = "none";
+				}
+					break;
+				case 4: if (!object.value.match(regExZipcode)) {
+					object.style.border = "2px solid red";
+					document.getElementById("errorMsgZipcode").style.display = "block";
+					object.value = "";
+				}
+				else {
+					object.style.border = "";
+					document.getElementById("errorMsgZipcode").style.display = "none";
+				}
+					break;
+			}
+
+		}
+
+		function validateForm(myForm) {
+			var count = 0;
+			var sourceLength = myForm.source.length;
+			var checkDrink = myForm.checkDrink.length;
+			var flag;
+
+			//comments
+			if (myForm.comments.value == "") {
+				errComment.innerHTML = "Please provide your comments";
+				return false;
+			} else {
+				errComment.innerHTML = "";
+				flag = true;
+			}
+
+			//Checkbox
+			for (index = 0; index < sourceLength; index++) {
+				if (myForm.source[index].checked == true)
+					count++;
+			}
+			if (count == 0) {
+				errSource.innerHTML = "Please select the source";
+				return false;
+			}
+			else {
+				errSource.innerHTML = "";
+				flag = true;
+			}
+
+			//Dropdown 
+			if (myForm.drink.value == "") {
+				errDrink.innerHTML = "Please select your drink";
+				return false;
+			}
+			else {
+				errDrink.innerHTML = "";
+				flag = true;
+			}
+
+			//textbox
+			for (index = 0; index < checkDrink; index++) {
+				if (myForm.checkDrink[index].checked == true) {
+					count = 1;
+					test.innerHTML = "";
+					flag = true;
+				}
+				else {
+					if (txtInput1.value == "") {
+						errText1.innerHTML = 'Please provide instructions';
+						return false;
+					} else {
+						errText1.innerHTML = "";
+						flag = true;
+					}
+				}
+			}
+
+			//table
+			if (document.getElementById("data") == null)
+				createTable();
+			else {
+				appendRow();
+			}
+
+			return false;
+		}
+
+		comments.onblur = function () {
+			if (comments.value == "") {
+				errComment.innerHTML = 'Please provide your comments';
+				return false;
+			} else {
+				errComment.innerHTML = "";
+				flag = true;
+			}
+		}
+
+		function selectFunction(e) {
+			if (myForm.drink.value == "latte") {
+				latte.style.display = "block";
+			} else { latte.style.display = "none"; }
+
+			if (myForm.drink.value == "mocha") {
+				mocha.style.display = "block";
+			} else { mocha.style.display = "none"; }
+
+			if (myForm.drink.value == "espresso") {
+				espresso.style.display = "block";
+			} else { espresso.style.display = "none"; }
+
+			if (myForm.drink.value == "americano") {
+				americano.style.display = "block";
+			} else { americano.style.display = "none"; }
+
+			if (myForm.drink.value == "cappuccino") {
+				cappuccino.style.display = "block";
+			} else { cappuccino.style.display = "none"; }
+		}
+
+		function onCheck(e) {
+			if (e.checked == true) {
+				text1.style.display = "block";
+				test.innerHTML = "";
+				//errText1.innerHTML = 'Please provide instructions';
+				//test.innerHTML = "This field cannot be empty!";
+			} else {
+				text1.style.display = "none";
+				errText1.innerHTML = "";
+				//test.innerHTML = "";
+			}
+		}
+
+		txtInput1.onblur = function () {
+			if (txtInput1.value == "") {
+				errText1.innerHTML = 'Please provide instructions';
+				return false;
+			} else {
+				errText1.innerHTML = "";
+				flag = true;
+			}
+		}
+
+
+		function createTable() {
+
+			container.style.display = "none";
+			back.style.display = "block";
+			var myTableDiv = document.getElementById("myTable");
+			table = document.createElement("TABLE");
+			table.setAttribute("id", "data");
+			table.border = '3';
+			myTableDiv.appendChild(table);
+
+			var header = table.createTHead();
+
+			var th0 = table.tHead.appendChild(document.createElement("th"));
+			th0.innerHTML = "First Name";
+			var th1 = table.tHead.appendChild(document.createElement("th"));
+			th1.innerHTML = "Last Name";
+			var th2 = table.tHead.appendChild(document.createElement("th"));
+			th2.innerHTML = "Email Id";
+			var th3 = table.tHead.appendChild(document.createElement("th"));
+			th3.innerHTML = "Phone Number";
+			var th4 = table.tHead.appendChild(document.createElement("th"));
+			th4.innerHTML = "Zip Code";
+			var th5 = table.tHead.appendChild(document.createElement("th"));
+			th5.innerHTML = "Source";
+			var th6 = table.tHead.appendChild(document.createElement("th"));
+			th6.innerHTML = "Drink";
+			var th7 = table.tHead.appendChild(document.createElement("th"));
+			th7.innerHTML = "Drink Size";
+			var th8 = table.tHead.appendChild(document.createElement("th"));
+			th8.innerHTML = "Instructions";
+			var th9 = table.tHead.appendChild(document.createElement("th"));
+			th9.innerHTML = "Comments";
+
+			appendRow();
+		}
+
+		function appendRow() {
+			var fname = document.myForm.firstName.value;
+			var lname = document.myForm.lastName.value;
+			var email = document.myForm.emailId.value;
+			var phone = document.myForm.phoneNumber.value;
+			var zip = document.myForm.zipcode.value;
+			//var source = document.myForm.source.value;
+			var drink = document.myForm.drink.value;
+			var comment = document.myForm.comments.value;
+			var sourceLength = myForm.source.length;
+			var sourceArray = []; var str;
+			var drinkChoiceLen = myForm.checkDrink.length;
+			var drinkArray = []; var drinkStr;
+			var textInput = document.myForm.txtInput1.value;
+			var rowCount = table.rows.length;
+			var row = table.insertRow(rowCount);
+
+			row.insertCell(0).innerHTML = fname;
+			row.insertCell(1).innerHTML = lname;
+			row.insertCell(2).innerHTML = email;
+			row.insertCell(3).innerHTML = phone;
+			row.insertCell(4).innerHTML = zip;
+
+			for (index = 0; index < sourceLength; index++) {
+				if (myForm.source[index].checked == true)
+					sourceArray.push(myForm.source[index].value);
+			}
+
+			str = sourceArray.join(', ');
+			row.insertCell(5).innerHTML = str;
+			row.insertCell(6).innerHTML = drink;
+			for (index = 0; index < drinkChoiceLen; index++) {
+				if (myForm.checkDrink[index].checked == true)
+					drinkArray.push(myForm.checkDrink[index].value);
+			}
+
+			drinkStr = drinkArray.join(', ');
+			row.insertCell(7).innerHTML = drinkStr;
+			row.insertCell(8).innerHTML = textInput;
+			row.insertCell(9).innerHTML = comment;
+		}
+
+	</script>
+</body>
+
+</html>
