@@ -1,0 +1,194 @@
+/*index page*/
+#content { 
+    background-image: url(coffeebeans.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width:100%;
+    height: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;	   
+}
+
+.name {
+    color: white;
+    position: absolute;
+    top: 8%;
+    width: 80%;
+    text-align: center;
+    font-size: 3em;
+    font-family: cursive;
+    font-style: italic;
+    font-weight: bold; 
+    line-height: 0.8;
+    padding: 10px;
+	margin-left: 100px;   
+}
+
+.mytext {   
+    background-color: rgba(0,0,0, 0.4);
+    color: white;
+    position: absolute;
+    bottom: 5%;
+    width: 80%;
+    text-align: center;
+    font-size: 2em;
+    font-family: cursive;
+    font-style: italic;
+    font-weight: bold;
+    padding: 10px;
+	margin-left: 120px;      
+}
+
+ul {
+    list-style-type: none;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #d1caca;
+    background-color: black;
+}
+  
+li {
+    float: left;
+}
+  
+li a {
+    display: block;
+    color:white;
+    text-align: center;
+    padding: 17px 124px;
+    text-decoration: none;
+    font-size: 100%;
+}
+  
+li a:hover:not(.active) {
+    background-color: rgb(78, 67, 67);
+}
+  
+li a.active {
+    color: white;
+    background-color: rgb(94, 38, 38);
+}
+ 
+.footer {
+    left: 0;
+    bottom: 0;
+    padding: 10px;
+    width: 100%;
+    background-color:  rgb(240, 232, 232);
+    color: rgb(41, 6, 6);
+    text-align: center;
+    background-image: url(coffeemug.jpg);
+    background-repeat: no-repeat;
+    background-position: left;
+}
+
+p a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/*about & career page*/
+#aboutus, #jobimg{
+    background-image: url(file.gif);
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    width:100%;
+    height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header,.jobs {
+    padding: 60px;
+    text-align: center;
+    background: white;
+    color: rgb(221, 132, 31);
+    font-size: 30px;
+    font-family: cursive;
+    font-weight: bold; 
+    text-shadow: 3px 3px 3px  rgb(78, 26, 26);
+}
+
+.about,.jobtext {
+    color: rgb(78, 26, 26);
+    position: absolute;
+    top: 20%;
+    right: 40%;
+    width: 50%;
+    text-align: center;
+    font-size: 2em;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-style: italic;
+    padding: 60px;
+    margin-left: 100px; 
+}
+
+/*menu page*/
+.menu{
+    padding: 5px;
+	margin-left: auto;
+    margin-right: auto; 
+    margin-top: 30px; 
+    text-align: center;
+    background:rgb(240, 232, 232); 
+    color:  rgb(43, 2, 2);
+    font-size: 30px;
+    font-family: cursive;
+    font-weight: bold; 
+    text-shadow: 3px 3px 3px rgb(10, 9, 9);
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: rgb(218, 209, 209); 
+    color: rgb(43, 2, 2);
+    text-align: center;
+    font-size: 25px;
+    font-style: italic;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+  
+th, td {
+    text-align: center;
+    padding: 8px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*visit page*/
+.visitus{
+    color: rgb(43, 2, 2);
+    position: absolute;
+    top: 8%;
+    width: 100%;
+    text-align: center;
+    text-shadow: 3px 3px 3px rgb(10, 9, 9);
+    font-size: 30px;
+    font-family: cursive;
+    font-weight: bold; 
+    margin-left: auto; 
+    margin-right: auto; 
+    background-color: rgb(240, 232, 232); 
+}
+
+.visit {
+    color:rgb(43, 2, 2);
+    position: absolute;
+    top: 28%;
+    width: 100%;
+    text-align: center;
+    font-size: 22px;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-style: italic;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(218, 209, 209); 
+}
+
+
