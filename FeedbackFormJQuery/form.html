@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Feedback</title>
+    <style>
+        label {
+            float: left;
+            width: 150px;
+        }
+
+        #container {
+            width: 700px;
+            margin: auto;
+            background-color: beige;
+        }
+
+        main {
+            padding: 50px;
+        }
+
+        #opts,
+        #opt1,
+        #opt2,
+        #opt3,
+        #opt4,
+        #opt5,
+        #opt1tb,
+        #opt2tb,
+        #opt3tb,
+        #opt4tb,
+        #opt5tb {
+            display: none;
+            text-align: justify;
+        }
+
+        #myTable {
+            margin-top: 4em;
+            text-align: center;
+            position: center;
+            display: none;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="validate.js"></script>
+
+</head>
+
+<body>
+    <div id="container">
+
+        <main>
+            <h2>Feeback</h2>
+            <h3>Love something? Hate something? Let us know!</h3>
+            Note : Fields marked with an asterisk(*) are mandatory
+            <br><br>
+            <form id="myForm" method="post">
+
+                <label>Title*:</label>
+                <input type="radio" name="title" id="miss" value="miss" required="required" />Miss
+                <input type="radio" name="title" id="mr" value="mr" required="required" />Mr.
+                <input type="radio" name="title" id="mrs" value="mrs" required="required" />Mrs. &nbsp;
+                <span id="title"></span>
+                <br><br>
+
+                <label for="firstName">First Name*:</label>
+                <input type="text" name="firstName" id="firstName" placeholder="First Name" />
+                <br><br>
+
+
+                <label for="lastName">Last Name*:</label>
+                <input type="text" name="lastName" id="lastName" placeholder="Last Name" />
+                <br><br>
+
+
+                <label for="emailId">Email Id*:</label>
+                <input type="text" name="emailId" id="emailId" placeholder="yourname@domain.com" />
+                <br><br>
+
+
+                <label for="phoneNumber">Phone Number*:</label>
+                <input type="text" name="phoneNumber" id="phoneNumber" placeholder="xxx-xxx-xxxx" />
+                <br><br>
+
+                <label for="zipcode">ZipCode*:</label>
+                <input type="text" name="zipcode" id="zipcode" placeholder="xxxxxx" />
+                <br><br>
+
+                <!-- <label for="source">How did you hear*:</label>
+                <input type='checkbox' name="source" value="facebook" /> Facebook
+                <input type='checkbox' name="source" value="google" /> Google
+                <input type='checkbox' name="source" value="yelp" /> Yelp &nbsp;&nbsp;
+                <span id="source"></span>
+                <br><br> -->
+
+                <div id='source'>
+					<label for="checkbox">How did you hear*:</label>
+					<input id='facebook' type='checkbox' name="source" value="facebook" /> Facebook
+					<input id='google' type='checkbox' name="source" value="google" /> Google
+					<input id='yelp' type='checkbox' name="source" value="yelp" /> Yelp
+				</div>
+				<br><br>
+
+                <label for="comments">Comments*:</label>
+                <textarea name="text" id="comments" placeholder="Your comments" rows="5" cols="25"></textarea>
+                &nbsp;&nbsp;&nbsp;
+                <br><br>
+
+                <div class="Identity">
+                    <label for="idsel">Drinks*:</label>
+                    <select id="idsel" name="op">
+                        <option name="op" value="-Select-">-Select your drink-</option>
+                        <option name="op" value="Latte">Latte</option>
+                        <option name="op" value="Mocha">Mocha</option>
+                        <option name="op" value="Espresso">Espresso</option>
+                        <option name="op" value="Americano">Americano</option>
+                        <option name="op" value="Cappuccino">Cappuccino</option>
+                    </select>
+                    <br><br>
+                </div>
+                <div id="opts">
+                    <div id="opt1">
+                        <label for="myCheck1">Large Latte (3.00$)</label>
+                        <input type="checkbox" id="myCheck1">
+                        <br><br>
+                        <div id="opt1tb">
+                            <label for="txtbx1">Provide instructions</label>
+                            <input type="text" name="txtbx1" id="txtbx1">
+                            <br><br>
+                        </div>
+                    </div>
+                    <div id="opt2">
+                        <label for="myCheck2">Large Mocha (4.50$)</label>
+                        <input type="checkbox" id="myCheck2">
+                        <br><br>
+                        <div id="opt2tb">
+                            <label for="txtbx2">Provide instructions</label>
+                            <input type="text" name="txtbx2" id="txtbx2">
+                            <br><br>
+                        </div>
+                    </div>
+                    <div id="opt3">
+                        <label for="myCheck3">Large Espresso (2.50$)</label>
+                        <input type="checkbox" id="myCheck3">
+                        <br><br>
+                        <div id="opt3tb">
+                            <label for="txtbx3">Provide instructions</label>
+                            <input type="text" name="txtbx3" id="txtbx3">
+                            <br><br>
+                        </div>
+                    </div>
+                    <div id="opt4">
+                        <label for="myCheck4">Large Americano (3.50$)</label>
+                        <input type="checkbox" id="myCheck4">
+                        <br><br>
+                        <div id="opt4tb">
+                            <label for="txtbx4">Provide instructions</label>
+                            <input type="text" name="txtbx4" id="txtbx4">
+                            <br><br>
+                        </div>
+                    </div>
+                    <div id="opt5">
+                        <label for="myCheck5">Large Cappuccino (4.00$)</label>
+                        <input type="checkbox" id="myCheck5">
+                        <br><br>
+                        <div id="opt5tb">
+                            <label for="txtbx5">Provide instructions</label>
+                            <input type="text" name="txtbx5" id="txtbx5">
+                            <br><br>
+                        </div>
+                    </div>
+                </div>
+
+
+                <button name="submit" id="submit" type="button">Submit</button>
+                <input type="reset">
+                <br><br>
+            </form>
+
+            <div id="myTable">
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <td><b>Name</b></td>
+                            <td><b>E-mail Id</b></td>
+                            <td><b>Phone No.</b></td>
+                            <td><b>Zipcode</b></td>
+                            <td><b>Source</b></td>
+                            <td><b>Comments</b></td>
+                            <td><b>Drink</b></td>
+                        </tr>
+                    </thead>
+                    <tbody id="displayArea"></tbody>
+                </table>
+            </div><br><br>
+            <div id="back" style="display: none" align="center"><a href="form.html">Go Back</a></div>
+        </main>
+    </div>
+</body>
+
+</html>
