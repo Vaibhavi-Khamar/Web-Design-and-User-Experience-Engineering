@@ -1,0 +1,20 @@
+main {
+  padding: 50px;
+}
+
+#container {
+  width: 800px;
+  margin: auto;
+  background-color: beige;
+} 
+
+label {	
+  float: left;
+  width: 150px;
+}
+
+#email-error-label, #fname-error-label, #lname-error-label, #phone-error-label,
+#zipcode-error-label , #comments-error-label,#radio-error-label, #checkbox-error-label {
+  color: red;
+  float: right;
+}
