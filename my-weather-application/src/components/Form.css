@@ -1,0 +1,45 @@
+.form-style{
+  text-align: center;
+  margin-top: 40px;
+}
+.form-group{
+  margin-left: 450px;
+  padding: 20px 20px;
+}
+
+.btn-weather{
+  background-color: blue;
+  color: white;
+  font-weight: bold;
+  border-radius: 6px;
+}
+
+input[type="text"] {
+  text-align: center;
+  border: 4;
+  width: 100%;
+  padding-bottom: 4px;
+  color: rgb(48, 36, 36) !important;
+  font-weight: lighter;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+  button {
+  border: 0;
+  padding: 8px 20px;
+  margin: 0 2px;
+  border-radius: 2px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 15px;
+  cursor: pointer;
+  color: #fff;
+  font-weight: 100;
+}
+ 
+button:active {
+  outline: none;
+}

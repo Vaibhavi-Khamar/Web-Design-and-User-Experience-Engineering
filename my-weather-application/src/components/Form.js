@@ -1,0 +1,19 @@
+import React from "react";
+import "./Form.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+class Form extends React.Component {
+    render() {
+        return (
+            <div className="row" style={{ 'textAlign': 'center' }}>
+                <form className="form-group" onSubmit={this.props.getWeather} >
+                    <input type="text" name="city" placeholder="City" />
+                    <input type="text" name="country" placeholder="Country" />
+                    <button className="btn-weather">Get Weather</button>
+                </form>
+            </div>
+        );
+    }
+}
+
+export default Form;  

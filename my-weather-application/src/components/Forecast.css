@@ -1,0 +1,26 @@
+.card-img-top{
+    width: 100%;
+    height: 100%;
+    border-top-right-radius: 1.25rem;
+    border-top-left-radius: 1.25rem;
+}
+
+.card{
+    border-radius: 1.05rem;
+}
+
+.card-body{
+    padding: 20px;
+}
+
+.forecast-card{
+    text-align: center;
+    background-color: rgb(221, 202, 221);
+    opacity: 0.6;
+}
+
+.forecast-data{
+    color: rgb(20, 30, 88);
+    float: left;
+    margin-left: 20px;
+}
